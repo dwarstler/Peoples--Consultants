@@ -40,3 +40,13 @@ h2{
     left: 0px;
     top:180px;
 }
+#logo{
+	padding-top: 70px;
+	padding-bottom: 50px;
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+#motto{
+	padding-bottom: 70px;
+}
