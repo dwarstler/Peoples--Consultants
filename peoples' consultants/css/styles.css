@@ -5,7 +5,6 @@
 
 body{ 
 	font-family: Futura;
-	padding-bottom: 100px;
 }
 .jumbotron{
 	padding-top: 250px;
@@ -14,7 +13,7 @@ body{
 }
 
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus{
-	background-color: #C0C0C0;
+	background-color: white; opacity:.9;
 }
 
 h3{
@@ -27,7 +26,17 @@ h2{
 	text-align: center;
 	font-size: 22px;
 }
-.span12{
-	height: 50%;
-	width: 50%;
+#myCarousel{
+	position: relative;
+}
+#carText
+{
+    z-index:100;
+    position:absolute;    
+    color: white;
+    opacity: 1;
+    font-family: governor;
+    font-size:70px;
+    left: 0px;
+    top:180px;
 }
