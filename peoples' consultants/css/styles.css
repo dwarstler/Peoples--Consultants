@@ -7,11 +7,6 @@ body{
 	font-family: Futura;
 	background-color: #222930;
 }
-.jumbotron{
-	padding-top: 250px;
-	height: 100%;
-	width: 100%;
-}
 .navbar-default{
 	background-color: #E9E9E9;
 	border-collapse: #E9E9E9;
