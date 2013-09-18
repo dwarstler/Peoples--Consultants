@@ -35,7 +35,7 @@ h2{
     position:absolute;    
     color: white;
     opacity: 1;
-    font-family: governor;
+    font-family: governor, futura;
     font-size:70px;
     left: 0px;
     top:180px;
