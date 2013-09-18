@@ -63,3 +63,11 @@ h2{
 #motto{
 	padding-bottom: 70px;
 }
+.item{
+          display: block;
+          height: 700px;
+          max-width: 100%;
+}
+
+
+
