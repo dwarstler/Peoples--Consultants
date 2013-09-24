@@ -1,103 +1,9 @@
-/*
-.nav .caret{
-	border-top-color: white;
-	border-bottom-color: white;
-}
 
-body{ 
+body{
+	background-color: #F0F8FF;
 	font-family: Futura;
-	background-color: #222930;
+	max-width: 2000px;
 }
-.navbar-default{
-	background-color: #E9E9E9;
-	border-collapse: #E9E9E9;
-}
-.navbar-inverse{
-	background-color: #E9E9E9;
-}
-.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus{
-	background-color: white; opacity:.9;
-}
-.navbar-default .navbar-nav>li>a{
-	color: #222930;
-}
-.navbar-default .navbar-brand{
-	color: #222930;
-}
-
-h3{
-	text-align: center;
-	font-size: 18px;
-	font-weight: lighter;
-	clear: both;
-	color: #E9E9E9;
-}
-h2{
-	text-align: center;
-	font-size: 22px;
-	color: #E9E9E9;
-}
-#footerText{
-	color: #222930;
-}
-#myCarousel{
-	position: relative;
-}
-#carText
-{
-    z-index:100;
-    position:absolute;    
-    color: white;
-    opacity: 1;
-    font-family: governor, futura;
-    font-size:70px;
-    left: 0px;
-    top:180px;
-    min-width: 100%;
-}
-#logo{
-	padding-top: 70px;
-	padding-bottom: 50px;
-	display: block;
-	max-width: 100%;
-	margin-right: auto;
-	margin-left: auto;
-}
-#motto{
-	padding-bottom: 70px;
-}
-.item{
-        display: block;
-      	max-width: 100%
-}
-html,body{height:100%;}
-.carousel,.item,.active{height:100%;}
-.carousel-inner{height:100%;}
-.fill{width:100%;height:500px;background-position:center;background-size:cover;}
-
-/* faster sliding speed 
-.carousel-inner > .item {
-    -webkit-transition: 0.3s ease-in-out left;
-    -moz-transition: 0.3s ease-in-out left;
-    -o-transition: 0.3s ease-in-out left;
-    transition: 0.3s ease-in-out left;
-}
-*/
-
-/* keep full widget on smaller screens
-@media (max-width: 767px) { 
-	body {
-		padding-left: 0;
-		padding-right: 0;
-	}
-	*/
-
-body {
-  padding-bottom: 40px;
-  color: #5a5a5a;
-}
-
-
 
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
@@ -108,7 +14,7 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 10;
+  z-index: 100;
 }
 
 
@@ -123,7 +29,7 @@ body {
 }
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
-  z-index: 10;
+  z-index: 0;
 }
 
 /* Declare heights because of positioning of img element */
@@ -219,22 +125,24 @@ body {
     border-radius: 4px;
   }
 
-  .block {
-        margin-left: -20px;
-        margin-right: -20px;
-    }
+ .block {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
     /* Bump up size of carousel content */
-  .carousel-caption p {
-    margin-bottom: 20px;
-    font-size: 21px;
-    line-height: 1.4;
+ .carousel-caption p {
+   margin-bottom: 20px;
+   font-size: 21px;
+   line-height: 1.4;
+  }
+}
 
+/* FOOTER 
+------------------------------------------------*/
+footer{
+	height: 100px;
 }
-.myCarPic{
-	position: absolute;
-	top: 0;
-	left: 0;
-}
+
 
 
 
