@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The Peoples' Consultants</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" type="text/css" href="assets/styles.css">    -->
+</head>
+<body>
+<div class="container">
+<!-- Nav Bar
+=========================================== -->
+<div class="row">
+    <div class="navbar-wrapper">
+        <div class="container">
+            <div class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container">
+                    <a href="#" class="navbar-brand">the peoples' consultants</a>
+                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="collapse navbar-collapse navHeaderCollapse">
+                        <ul class="nav navbar-nav">
+                            <!--<li><a href="#">Home</a></li>-->
+                            <li><a href="#">About Us</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Learn
+                                    <b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Donate
+                                    <b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Money</a></li>
+                                    <li><a href="#">Money</a></li>
+                                    <li><a href="#">Money</a></li>
+                                    <li><a href="#">Money</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>  <!--End row for Nav-bar-->
+        <div class="row" style="padding-top: 50px"><%= yield %></div>  <!--Row for contents-->
+
+
+    <!-- FOOTER -->
+    <div class="row">
+    <section>
+        <footer class="divider">
+            <p class="pull-right"><a href="#">Back to top</a></p>
+            <p>Tattooed American Apparel. <a href="http://www.bootply.com/62603">Tattooed American Apparel</a></p>
+        </footer>
+    </section>
+    </div><!-- End row for Footer-->
+
+</div><!-- /.container -->
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
