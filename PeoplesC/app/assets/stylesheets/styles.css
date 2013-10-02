@@ -1,0 +1,248 @@
+/*
+.nav .caret{
+	border-top-color: white;
+	border-bottom-color: white;
+}
+
+body{ 
+	font-family: Futura;
+	background-color: #222930;
+}
+.navbar-default{
+	background-color: #E9E9E9;
+	border-collapse: #E9E9E9;
+}
+.navbar-inverse{
+	background-color: #E9E9E9;
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus{
+	background-color: white; opacity:.9;
+}
+.navbar-default .navbar-nav>li>a{
+	color: #222930;
+}
+.navbar-default .navbar-brand{
+	color: #222930;
+}
+
+h3{
+	text-align: center;
+	font-size: 18px;
+	font-weight: lighter;
+	clear: both;
+	color: #E9E9E9;
+}
+h2{
+	text-align: center;
+	font-size: 22px;
+	color: #E9E9E9;
+}
+#footerText{
+	color: #222930;
+}
+#myCarousel{
+	position: relative;
+}
+#carText
+{
+    z-index:100;
+    position:absolute;    
+    color: white;
+    opacity: 1;
+    font-family: governor, futura;
+    font-size:70px;
+    left: 0px;
+    top:180px;
+    min-width: 100%;
+}
+#logo{
+	padding-top: 70px;
+	padding-bottom: 50px;
+	display: block;
+	max-width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+}
+#motto{
+	padding-bottom: 70px;
+}
+.item{
+        display: block;
+      	max-width: 100%
+}
+html,body{height:100%;}
+.carousel,.item,.active{height:100%;}
+.carousel-inner{height:100%;}
+.fill{width:100%;height:500px;background-position:center;background-size:cover;}
+
+/* faster sliding speed 
+.carousel-inner > .item {
+    -webkit-transition: 0.3s ease-in-out left;
+    -moz-transition: 0.3s ease-in-out left;
+    -o-transition: 0.3s ease-in-out left;
+    transition: 0.3s ease-in-out left;
+}
+*/
+
+/* keep full widget on smaller screens
+@media (max-width: 767px) { 
+	body {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	*/
+
+body {
+  padding-bottom: 40px;
+  color: #5a5a5a;
+}
+
+
+
+/* CUSTOMIZE THE NAVBAR
+-------------------------------------------------- */
+
+/* Special class on .container surrounding .navbar, used for positioning it into place. */
+.navbar-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+  margin-bottom: 60px;
+  padding-top: 51px;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 500px;
+  background-color:#bbb;
+  width: 100%;
+}
+.carousel img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 500px;
+
+}
+
+
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Pad the edges of the mobile views a bit */
+.marketing {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.marketing h2 {
+  font-weight: normal;
+}
+.marketing .col-lg-4 p {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+  margin: 80px 0; /* Space out the Bootstrap <hr> more */
+}
+.featurette {
+  /*border: black dotted 20px;      */
+  padding-top: 10px;
+  /*
+  padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
+  overflow: hidden; /* Vertically center images part 2: clear their floats. */
+}
+.featurette-image {
+  margin-top: -10px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+}
+
+/* Give some space on the sides of the floated elements so text doesn't run right into it. */
+.featurette-image.pull-left {
+  margin-right: 40px;
+}
+.featurette-image.pull-right {
+  margin-left: 40px;
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+   /*border: black dotted 20px;             */
+  font-size: 50px;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 768px) {
+
+  /* Remve the edge padding needed for mobile */
+  .marketing {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Navbar positioning foo */
+  .navbar-wrapper {
+    z-index: 100;
+    margin-top: 20px;
+    margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
+  }
+  /* The navbar becomes detached from the top, so we round the corners */
+  .navbar-wrapper .navbar {
+    border-radius: 0px;
+
+  }
+
+  .block {
+        margin-left: -20px;
+        margin-right: -20px;
+    }
+    /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: 1.4;
+    z-index: 0;
+
+}
+.myCarPic{
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+
+
+
