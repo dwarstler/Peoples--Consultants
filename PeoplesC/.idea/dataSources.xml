@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="2109245520">
+    <data-source source="LOCAL" name="Rails PeoplesC: development" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="0a5e16dc-9284-4036-b17b-fa7a19021b8b">
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://cs.furman.edu:3306/ConsultantsC</jdbc-url>
+      <user-name>ConsultantsC</user-name>
+      <user-password>dfc9dfd9dfc9df99df9edf98</user-password>
+      <libraries>
+        <library>
+          <url>file://$USER_HOME$/.IntelliJIdea12/config/jdbc-drivers/mysql-connector-license.txt</url>
+        </library>
+        <library>
+          <url>file://$USER_HOME$/.IntelliJIdea12/config/jdbc-drivers/mysql-connector-java-5.1.26-bin.jar</url>
+        </library>
+      </libraries>
+    </data-source>
+    <data-source source="LOCAL" name="Rails PeoplesC: test" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="057c72b7-9ca9-4146-9c76-045be9b94e88">
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://cs.furman.edu:3306/ConsultantsC</jdbc-url>
+      <user-name>ConsultantsC</user-name>
+      <user-password>dfc9dfd9dfc9df99df9edf98</user-password>
+      <libraries>
+        <library>
+          <url>file://$USER_HOME$/.IntelliJIdea12/config/jdbc-drivers/mysql-connector-license.txt</url>
+        </library>
+        <library>
+          <url>file://$USER_HOME$/.IntelliJIdea12/config/jdbc-drivers/mysql-connector-java-5.1.26-bin.jar</url>
+        </library>
+      </libraries>
+    </data-source>
+    <data-source source="LOCAL" name="Rails PeoplesC: production" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="27ef1a7a-1af8-406d-9d43-2114bd96c273">
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://cs.furman.edu:3306/ConsultantsC</jdbc-url>
+      <user-name>ConsultantsC</user-name>
+      <user-password>dfc9dfd9dfc9df99df9edf98</user-password>
+      <libraries>
+        <library>
+          <url>file://$USER_HOME$/.IntelliJIdea12/config/jdbc-drivers/mysql-connector-license.txt</url>
+        </library>
+        <library>
+          <url>file://$USER_HOME$/.IntelliJIdea12/config/jdbc-drivers/mysql-connector-java-5.1.26-bin.jar</url>
+        </library>
+      </libraries>
+    </data-source>
+  </component>
+</project>
+
