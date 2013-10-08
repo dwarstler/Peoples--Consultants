@@ -1035,7 +1035,6 @@ ActiveRecord::Schema.define(version: 20131003213504) do
     t.string   "file_location"
     t.integer  "admin_id"
     t.string   "last_edited_by"
-    t.integer  "project_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -1045,7 +1044,6 @@ ActiveRecord::Schema.define(version: 20131003213504) do
     t.string   "file_location"
     t.integer  "admin_id"
     t.string   "last_edited_by"
-    t.integer  "project_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -2063,7 +2061,6 @@ ActiveRecord::Schema.define(version: 20131003213504) do
     t.string   "file_location"
     t.integer  "admin_id"
     t.string   "last_edited_by"
-    t.integer  "project_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
