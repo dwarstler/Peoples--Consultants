@@ -36,12 +36,11 @@ class PictureController < ApplicationController
     def update
       @picture = Picture.find(params[:id])    #correct?
 
-      if @post.update(params[:post].permit(:title, :content))
-        redirect_to @post
+      #if @post.update(params[:post].permit(:title, :content))
+        #redirect_to @post
       else
         render 'edit'
       end
     end
     def destroy
     end
-  end

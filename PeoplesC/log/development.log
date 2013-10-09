@@ -1690,3 +1690,72 @@ ActionController::RoutingError (No route matches [GET] "/aboutus"):
   [1m[36m (160.6ms)[0m  [1mBEGIN[0m
   [1m[35mSQL (130.1ms)[0m  INSERT INTO `pictures` (`admin_id`, `created_at`, `file_location`, `picture_file`, `updated_at`) VALUES (1, '2013-10-08 01:04:58', 'PeoplesC/app/assets/images/Zunil_guatemala_panorama.JPG', 'Zunil_guatemala_panorama', '2013-10-08 01:04:58')
   [1m[36m (21.9ms)[0m  [1mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (4.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateDonations (20131008024411)
+  [1m[36m (301.6ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (232.7ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`) 
+  [1m[36mActiveRecord::SchemaMigration Load (6.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateVideos (20131003205857)
+  [1m[35m (99.9ms)[0m  CREATE TABLE `videos` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `picture_file` varchar(255), `file_location` varchar(255), `admin_id` int(11), `last_edited_by` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (7.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (41.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20131003205857')
+  [1m[36m (4.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateTexts (20131003211212)
+  [1m[35m (11.2ms)[0m  CREATE TABLE `texts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `text_file` varchar(255), `file_location` varchar(255), `admin_id` int(11), `last_edited_by` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (8.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (9.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20131003211212')
+  [1m[36m (3.3ms)[0m  [1mCOMMIT[0m
+Migrating to CreatePictures (20131003211319)
+  [1m[35m (2905.7ms)[0m  CREATE TABLE `pictures` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `picture_file` varchar(255), `file_location` varchar(255), `admin_id` int(11), `last_edited_by` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (6.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (14.0ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20131003211319')
+  [1m[36m (4.8ms)[0m  [1mCOMMIT[0m
+Migrating to CreateDonors (20131003211515)
+  [1m[35m (97.0ms)[0m  CREATE TABLE `donors` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `phone_number` varchar(255), `email` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (4.6ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (18.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20131003211515')
+  [1m[36m (4.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateAdmins (20131003213504)
+  [1m[35m (27.1ms)[0m  CREATE TABLE `admins` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `admin_name` varchar(255), `email_address` varchar(255), `admin_password` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (4.7ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (15.5ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20131003213504')
+  [1m[36m (6.0ms)[0m  [1mCOMMIT[0m
+Migrating to CreateDonations (20131008024411)
+  [1m[36mActiveRecord::SchemaMigration Load (3.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateDonations (20131008024411)
+  [1m[35m (55.2ms)[0m  CREATE TABLE `donations` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `amount` float, `donor_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (3.6ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (17.9ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20131008024411')
+  [1m[36m (6.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (2.1ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+
+
+Started GET "/assets/styles.css" for 10.0.2.2 at 2013-10-09 19:19:24 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (7.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+
+
+Started GET "/assets/robotBig.png" for 10.0.2.2 at 2013-10-09 19:19:25 +0000
+
+
+Started GET "/assets/robotSmall.png" for 10.0.2.2 at 2013-10-09 19:19:25 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (13.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mActiveRecord::SchemaMigration Load (1.9ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (4.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (3.1ms)[0m  ROLLBACK
+  [1m[36m (5.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (4.8ms)[0m  ROLLBACK
+  [1m[36m (2.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (117.7ms)[0m  INSERT INTO `admins` (`admin_name`, `admin_password`, `created_at`, `email_address`, `updated_at`) VALUES ('Alex Valis', 'password', '2013-10-09 19:44:15', 'asvalis2@gmail.com', '2013-10-09 19:44:15')
+  [1m[36m (25.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (12.0ms)[0m  BEGIN
+  [1m[36mSQL (48.7ms)[0m  [1mINSERT INTO `pictures` (`admin_id`, `created_at`, `file_location`, `picture_file`, `updated_at`) VALUES (1, '2013-10-09 19:48:07', 'PeoplesC/app/assests/images/Zunil_guatemala_panorama', 'Zunil_guatemala_panorama', '2013-10-09 19:48:07')[0m
+  [1m[35m (17.6ms)[0m  COMMIT
+  [1m[36m (2.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (27.6ms)[0m  INSERT INTO `pictures` (`admin_id`, `created_at`, `file_location`, `picture_file`, `updated_at`) VALUES (1, '2013-10-09 19:50:36', 'PeoplesC/app/assests/images/car1', 'Zunil_guatemala_panorama', '2013-10-09 19:50:36')
+  [1m[36m (7.1ms)[0m  [1mCOMMIT[0m
+  [1m[36m (2.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (21.4ms)[0m  INSERT INTO `pictures` (`admin_id`, `created_at`, `file_location`, `picture_file`, `updated_at`) VALUES (1, '2013-10-09 20:14:12', 'PeoplesC/app/assests/images/car2', 'Antigua_Valley', '2013-10-09 20:14:12')
+  [1m[36m (61.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (3.1ms)[0m  BEGIN
+  [1m[36mSQL (58.0ms)[0m  [1mINSERT INTO `pictures` (`admin_id`, `created_at`, `file_location`, `picture_file`, `updated_at`) VALUES (1, '2013-10-09 20:15:30', 'PeoplesC/app/assests/images/car3', 'Guatemala_Night', '2013-10-09 20:15:30')[0m
+  [1m[35m (17.7ms)[0m  COMMIT
