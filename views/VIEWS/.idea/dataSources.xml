@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="4269239996">
+    <data-source source="LOCAL" name="Rails VIEWS: development" product="SQLite" version="3.7.2" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native" uuid="4b8fb877-64aa-47fa-85c5-0c1d417cfc68">
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/development.sqlite3</jdbc-url>
+      <libraries>
+        <library>
+          <url>file://$USER_HOME$/Library/Preferences/IntelliJIdea12/jdbc-drivers/xerial-sqlite-license.txt</url>
+        </library>
+        <library>
+          <url>file://$USER_HOME$/Library/Preferences/IntelliJIdea12/jdbc-drivers/sqlite-jdbc-3.7.2.jar</url>
+        </library>
+      </libraries>
+    </data-source>
+  </component>
+</project>
+
