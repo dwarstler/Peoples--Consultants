@@ -1,4 +1,4 @@
-class PictureController < ApplicationController
+class PicturesController < ApplicationController
     def new
     end
     def index
@@ -8,15 +8,16 @@ class PictureController < ApplicationController
       @picture = Picture.find(params[:id])
     end
     def new
-      @picture = Picture.new()
+      @picture = Picture.new
+	  @picture.image = params[:file]
+	  @picture.save!
     end
     def edit
       @picture = Picture.find(params[:id])
     end
     def create
-      @picture = Picture.new
-	  @picture.picture = params[:file]
-	  @picture.picture = File.open()
+      @picture = Picture.new(picture_params)
+	  
       if @picture.save
         render 'new'
       else
@@ -44,3 +45,12 @@ class PictureController < ApplicationController
     end
     def destroy
     end
+	
+	private
+		def set_picture
+			@picture = Picture.find(params[:id])
+		end
+		
+		def picture_params
+			params[:picture]
+		end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131008024411) do
+ActiveRecord::Schema.define(version: 20131022202631) do
 
   create_table "admins", force: true do |t|
     t.string   "admin_name"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20131008024411) do
     t.string   "last_edited_by"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image"
   end
 
   create_table "texts", force: true do |t|
@@ -51,6 +52,14 @@ ActiveRecord::Schema.define(version: 20131008024411) do
     t.string   "file_location"
     t.integer  "admin_id"
     t.string   "last_edited_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "name"
+    t.string   "password"
+    t.boolean  "is_admin"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
