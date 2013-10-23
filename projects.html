@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- 
+			This carousel example is created with jQuery and the carouFredSel-plugin.
+			http://jquery.com
+			http://caroufredsel.dev7studios.com
+		-->
+
+<!--		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1" />
+		<meta name="description" value="This beautifull slider contains three sections, each section exists of three images, a caption and a pagination. After the last image of a section has been viewed, the slider seemlessly slides over to the next section, showing the new caption and pager. A subtle timer behind the caption shows how much time remains till the next slide will be shown." />
+		<meta name="keywords" value="slider, carousel, section, caption, images, pager" />
+		<title>Slider with 3 sections, each with 3 images, a caption and pager</title>            -->
+
+		<title>Projects</title>
+
+		<script src="http://code.jquery.com/jquery-1.8.2.min.js" type="text/javascript"></script>
+		<script src="jquery.carouFredSel-6.2.0-packed.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			$(function() {
+
+				var $imgs = $('#images .carousel'),
+					$capt = $('#captions .carousel'),
+					$timr = $('#timer');
+
+				$imgs.carouFredSel({
+					circular: false,
+					scroll: {
+						easing: 'quadratic', //the way of the change
+						duration: 2,   //speed
+						timeoutDuration: 2900,
+						onBefore: function( data ) {
+							$capt.trigger( 'slideTo', ['.' +  data.items.visible.first().attr( 'alt' ) ] );
+							$timr.stop().animate({
+								opacity: 0
+							}, data.scroll.duration);
+						},
+						onAfter: function() {
+							$timr.stop().animate({
+								opacity: 1
+							}, 150);     
+						}
+					},
+					auto: {
+						progress: '#timer'
+					},
+				/*	pagination: {
+						container: '.pager',
+						anchorBuilder: function( i ) {
+							return '<a class="p' + i + '" href="#"></a>';
+						}        
+					}       */         /*if you want more than one picture for each project, you can add this pagination*/
+				});
+				$capt.carouFredSel({
+					circular: false,
+					auto: false,
+					scroll: {
+						easing: 'quadratic',
+						duration: 2
+					}
+				});
+/*
+				$("#carouselPrev").click(function(){
+			        $("#carouselNext,#carouselPrev").hide();
+			        $("#carouselInner").animate({
+			            marginLeft : parseInt($("#carouselInner").css("margin-left"))+620+"px"
+			        },"slow","swing" , 
+			        function(){
+			            $("#carouselInner").css("margin-left","-620px")
+			            $("#carouselInner ul.column:last").prependTo("#carouselInner");
+			            $("#carouselNext,#carouselPrev").show();
+			        })
+			    })
+			    //進むボタン
+			    $("#carouselNext").click(function(){
+			        $("#carouselNext,#carouselPrev").hide();
+			        $("#carouselInner").animate({
+			            marginLeft : parseInt($("#carouselInner").css("margin-left"))-620+"px"
+			        },"slow","swing" , 
+			        function(){
+			            $("#carouselInner").css("margin-left","-620px")
+			            $("#carouselInner ul.column:first").appendTo("#carouselInner");
+			            $("#carouselNext,#carouselPrev").show();
+			        })
+			    })
+*/
+
+			});
+		</script>
+		<style type="text/css">
+			html, body {
+				height: 100%;
+				padding: 0;
+				margin: 0;
+			}
+			body {
+				background: #f0f8ff;  /*#A4C6FF*/
+				min-height: 600px;
+			}
+			body * {
+				font-family: Arial, Geneva, SunSans-Regular, sans-serif;
+				font-size: 14px;
+				color: #000000;  /*#666*/
+				line-height: 22px;
+			}
+			
+/*			#title p{
+				font-family: Verdana;
+				color: #000000
+				font-size: 100px;
+			}                                */
+
+			#wrapper {
+				/*box-shadow: 0 0 20px #110;*/
+				width: 700px;
+				height: 350px;
+				margin: -175px 0 0 -350px;  
+				/*overflow: hidden;   */
+				position: relative;
+				top: 50%;
+				left: 50%;
+				/*  padding: 0px 75px 75px 0px; */ /*added*/ 
+			}
+
+
+/* I added */
+/*			#carouselPrev{
+			    position:absolute;
+			    top:130px;
+			    left:-75px;
+			    cursor:pointer;
+			}
+			#carouselNext{
+			    position:absolute;
+			    top:130px;
+			    right:-75px;
+			    cursor:pointer;
+			}                         */
+/* I added finish */
+
+
+			#images {
+				width: 700px;
+				height: 350px;
+			}
+			#images img {
+				display: block;
+				float: left;
+			}
+			#timer,
+			#captions {
+				background: rgba( 0, 0, 0, 0.5 );
+				width: 700px;
+				height: 50px;
+				position: absolute;
+				left: 0;
+				bottom: 0;
+			}
+			#timer {
+				background: rgba( 200, 0, 0, 0.5 );
+			}
+			#captions .carousel > div {
+				color: #fff;
+				font-size: 22px;
+				font-weight: bold;
+				line-height: 52px;
+				text-transform: uppercase;
+				text-indent: 50px;
+				width: 700px;
+				height: 50px;
+				float: left;
+			}
+			.pager {
+				padding: 16px 50px 0 0;
+				float: right;
+			}
+			.pager a {
+				border: 1px solid #fff;
+				border-radius: 10px;
+				display: none;
+				width: 10px;
+				height: 10px;
+				margin: 0 3px;
+			}
+			.pager a:hover {
+				background: rgba( 255, 255, 255, 0.3 );
+			}
+
+			
+	/*		.pager a.selected {
+				background: #fff;
+			}
+			.pro1 .pager .p1,
+			.pro1 .pager .p2,
+			.pro1 .pager .p3,
+			.pro1 .pager .p4,  */
+		/*	.pro2 .pager .p4,  */
+	/*		.pro2 .pager .p5,
+			.pro2 .pager .p6,
+			.pro3 .pager .p7,
+			.pro3 .pager .p8,
+			.pro3 .pager .p9,
+			.pro4 .pager .p10 {
+				display: inline-block;
+			}				  	          */			
+
+			#donate-spacer {
+				height: 20%;
+			}
+			#donate {
+				border-top: 1px solid #000000;
+				width: 1000px;
+				padding: 50px -75px;
+				margin: 0 auto;
+				overflow: hidden;    
+				position: absolute;
+				left: -145px;
+			}
+			#donate p, #donate form {
+				margin: 0;
+				float: left;
+				position:absolute;
+				left: 25px;
+				top: 2500px;
+			}
+			#donate p .h1{
+				width: 650px;
+				color: #000000;  /*#cc9*/
+			}
+			h1 {
+				font-size: 25px;
+			}
+			h4 {
+				font-size: 15px;
+				text-align: justify;
+	/*			padding: 0px, 25px, 0px, 25px;   */
+			}  
+	/*		#donate form {
+				width: 100px;
+			}                       */
+
+			#dropmenu{
+			  list-style-type: none;
+			  width: 150px;
+			  height: 40px;
+			  position: absolute;
+			  top: -27px;
+			  left: 540px;
+			  margin: 30px auto 300px;
+			  padding: 0;
+			  background: #993333;  /* #993333  8a9b0f */
+			  border-bottom: 5px solid #663333;   /*#663333 535d09*/
+			  border-radius: 3px 3px 0 0;
+			}
+			#dropmenu li{
+			  position: relative;
+			  width: 100%;
+			  float: left;
+			  margin: 0;
+			  padding: 0;
+			  text-align: center;
+			}
+			#dropmenu li a{
+			  display: block;
+			  margin: 0;
+			  padding: 15px 0 11px;
+			  color: #fff;
+			  font-size: 20px;
+			  font-weight: bold;
+			  line-height: 1;
+			  text-decoration: none;
+			}
+			#dropmenu li:hover > a{
+			  background: #660000;    /*#6e7c0c*/
+		/*	  color: #;   eff7b1 */
+			}
+			#dropmenu > li:hover > a{
+			  border-radius: 3px 3px 0 0;
+			}
+			#dropmenu li ul{
+			  list-style: none;
+			  position: absolute;
+			  top: 100%;
+			  left: 0;
+			  margin: 0;
+			  padding: 0;
+			  border-radius: 0 0 3px 3px;
+			}
+			#dropmenu li:last-child ul{
+			  left: 0%;             /*the position compared with parents*/
+			  width: 100%
+			}
+			#dropmenu li ul li{
+			  overflow: hidden;
+			  width: 100%;
+			  height: 0;
+			  color: #fff;  /* #fff */
+			  -moz-transition: .2s;
+			  -webkit-transition: .2s;
+			  -o-transition: .2s;
+			  -ms-transition: .2s;
+			  transition: .2s;
+			}
+			#dropmenu li ul li a{
+			  padding: 13px 15px;
+			  background: #993333; /*6e7c0c*/
+			  text-align: center;
+			  font-size: 15px;
+			  font-weight: normal;
+			}
+			#dropmenu li:hover ul li{
+			  overflow: visible;
+			  height: 38px;
+			  border-top: 1px solid #663333; /*993333 7c8c0e*/
+			  border-bottom: 1px solid #616d0b;
+			}
+			#dropmenu li:hover ul li:first-child{
+			  border-top: 0;
+			}
+			#dropmenu li:hover ul li:last-child{
+			  border-bottom: 0;
+			}
+			#dropmenu li:hover ul li:last-child a{
+			  border-radius: 0 0 3px 3px;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<div id="wrapper">
+<!--			<p id="carouselPrev"><img src="img/prev.png" alt="Prev" width="75px"/><p>
+				<p id="carouselNext"><img src="img/next.png" alt="Next" width="75px"/><p>   prev and next botten  -->
+			<div id="images">
+				<div class="carousel">
+					<img src="img/Coffee1.png" alt="pro1" width="700" height="350" />
+					<img src="img/Coffee2.png" alt="pro1" width="700" height="350" />
+					<img src="img/Coffee3.png" alt="pro1" width="700" height="350" />
+					<img src="img/Coffee4.png" alt="pro1" width="700" height="350" />
+					<img src="img/Matcha1.png" alt="pro2" width="700" height="350" />
+					<img src="img/Matcha2.png" alt="pro2" width="700" height="350" />
+					<img src="img/Tohu.png" alt="pro3" width="700" height="350" />
+					<img src="img/Tohu2.png" alt="pro3" width="700" height="350" />
+					<img src="img/Tohu3.png" alt="pro3" width="700" height="350" />
+					<img src="img/Tea1.png" alt="pro4" width="700" height="350" />
+					<img src="img/Tea2.png" alt="pro4" width="700" height="350" />
+					<img src="img/Tea3.png" alt="pro4" width="700" height="350" />
+					<img src="img/Tea4.png" alt="pro4" width="700" height="350" />
+				</div>
+			</div>
+			<div id="timer"></div>
+			<div id="captions">
+				<div class="carousel">
+					<div class="pro1">Making Coffee
+						<div class="pager"></div>
+					</div>
+					<div class="pro2">Making Matcha
+						<div class="pager"></div>
+					</div>
+					<div class="pro3">Making Tofu
+						<div class="pager"></div>
+					</div>
+					<div class="pro4">Making Tea
+						<div class="pager"></div>
+					</div>
+				</div>
+				<div class="button">
+					<ul id="dropmenu">
+						<li><a href="#">Learn More</a>
+						    <ul>
+						      <li><a href="#p1">Making Coffee</a></li>
+						      <li><a href="#p2">Making Matcha</a></li>
+						      <li><a href="#p3">Making Tofu</a></li>
+						      <li><a href="#p4">Making Tea</a></li>
+						    </ul>
+						</li>
+					</ul>
+			</div>
+		</div>
+
+
+		<div id="donate-spacer"></div>  
+		<div id="donate">
+			<p>
+			<a id="MakingCoffee" name="p1"></a>
+			<h1>Making Coffee</h1>
+			<h4>
+				The United States of America (USA or U.S.A.), commonly referred to as the United States (US or U.S.), America, or simply the States, is a federal republic[10][11] consisting of 50 states, 16 territories, and a federal district. The 48 contiguous states and the federal district of Washington, D.C. are in central North America between Canada and Mexico. The state of Alaska is the northwestern part of North America, west of Canada and east of Russia, which is across the Bering Strait in Asia, and the state of Hawaii is an archipelago in the mid-North Pacific. The country also has five populated and nine unpopulated territories in the Pacific and the Caribbean.<br>
+
+				At 3.79 million square miles (9.83 million km2) in total and with around 316 million people, the United States is the fourth-largest country in total area, the fifth largest in the contiguous area and third in population. It is one of the world's most ethnically diverse and multicultural nations, the product of large-scale immigration from many countries.[12] The geography and climate of the U.S. is also extremely diverse, with deserts, plains, forests, and mountains that are home to a wide variety of wildlife.<br><br>
+			</h4>
+
+			<a id="MakingMatcha" name="p2"></a>
+			<h1>Making Matcha</h1>
+			<h4>
+				Japan is an island nation in East Asia. Located in the Pacific Ocean, it lies to the east of the Sea of Japan, China, North Korea, South Korea and Russia, stretching from the Sea of Okhotsk in the north to the East China Sea and Taiwan in the south. The characters that make up Japan's name mean "sun-origin", which is why Japan is sometimes referred to as the "Land of the Rising Sun".<br>
+
+				Japan is an archipelago of 6,852 islands. The four largest islands are Honshu, Hokkaido, Kyushu, and Shikoku, which together comprise about ninety-seven percent of Japan's land area. Japan has the world's tenth-largest population, with over 126 million people. Honshū's Greater Tokyo Area, which includes the de facto capital city of Tokyo and several surrounding prefectures, is the largest metropolitan area in the world, with over 30 million residents.<br>
+
+				Archaeological research indicates that people lived in Japan as early as the Upper Paleolithic period. The first written mention of Japan is in Chinese history texts from the 1st century AD. Influence from other nations followed by long periods of isolation has characterized Japan's history. From the 12th century until 1868, Japan was ruled by successive feudal military shogunates in the name of the Emperor. Japan entered into a long period of isolation in the early 17th century, which was only ended in 1853 when a United States fleet pressured Japan to open to the West. Nearly two decades of internal conflict and insurrection followed before the Meiji Emperor was restored as head of state in 1868 and the Empire of Japan was proclaimed, with the Emperor as a divine symbol of the nation. In the late 19th and early 20th centuries, victory in the First Sino-Japanese War, the Russo-Japanese War and World War I allowed Japan to expand its empire during a period of increasing militarism. The Second Sino-Japanese War of 1937 expanded into part of World War II in 1941, which came to an end in 1945 following the atomic bombings of Hiroshima and Nagasaki. Since adopting its revised constitution in 1947, Japan has maintained a unitary constitutional monarchy with an emperor and an elected legislature called the Diet.<br><br>
+			</h4>
+
+			<a id="MakingTofu" name="p3"></a>
+			<h1>Making Tofu</h1>
+			<h4>
+				Tofu, also called bean curd, is a food made by coagulating soy milk and then pressing the resulting curds into soft white blocks. It is a component in many East Asian and Southeast Asian cuisines. There are many different varieties of tofu, including fresh tofu and tofu that has been processed in some way. Tofu has a subtle flavor and can be used in savory and sweet dishes. It is often seasoned or marinated to suit the dish.<br>
+
+				Tofu originated in ancient China some 2,000 years ago. Chinese legend ascribes its invention to prince Liu An (179–122 BC). Tofu and its production technique were introduced into Korea and then Japan during the Nara period. It spread into other parts of East Asia as well. This spread likely coincided with the spread of Buddhism because it is an important source of protein in the vegetarian diet of East Asian Buddhism. Li Shizhen in the Ming Dynasty described a method of making tofu in Bencao Gangmu.<br>
+
+				Tofu has a low calorie count, relatively large amounts of protein, and little fat. It is high in iron and depending on the coagulant used in manufacturing, may also be high in calcium or magnesium.<br><br>
+			</h4>
+
+			<a id="MakingTea" name="p4"></a>
+			<h1>Making Tea</h1>
+			<h4>
+				Tea is an aromatic beverage commonly prepared by pouring hot or boiling water over cured leaves of the tea plant, Camellia sinensis. After water, tea is the most widely consumed beverage in the world. It has a cooling, slightly bitter, and astringent flavour that many people enjoy.<br>
+
+				Tea likely originated in China as a medicinal drink. It was first introduced to Portuguese priests and merchants in China during the 16th century. Drinking tea became popular in Britain during the 17th century. The British introduced it to India, in order to compete with the Chinese monopoly on the product.<br>
+
+				Tea has long been promoted for having a variety of positive health benefits. Recent studies suggest that green tea may help reduce the risk of cardiovascular disease and some forms of cancer, promote oral health, reduce blood pressure, help with weight control, improve antibacterial and antivirasic activity, provide protection from solar ultraviolet light, and increase bone mineral density. Green tea is also said to have "anti-fibrotic properties, and neuroprotective power." Additional research is needed to "fully understand its contributions to human health, and advise its regular consumption in Western diets."<br>
+
+				Tea catechins have known anti-inflammatory and neuroprotective properties, help regulate food intake, and have an affinity for cannabinoid receptors, which may suppress pain and nausea and provide calming effects.<br>
+
+				Consumption of green tea is associated with a lower risk of diseases that cause functional disability, such as stroke, cognitive impairment, and osteoporosis in the elderly.<br><br>
+			</h4>
+			</p>
+
+
+			<!--<form id="c-donate" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+				<input type="hidden" name="cmd" value="_s-xclick" />
+				<input type="hidden" name="hosted_button_id" value="ENVLWPR4QMU3U" />
+				<input type="image" src="https://www.paypalobjects.com/en_US/NL/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" />
+				<img alt="" border="0" src="https://www.paypalobjects.com/nl_NL/i/scr/pixel.gif" width="1" height="1" />
+			</form>  -->
+		</div>
+	</body>
+</html>

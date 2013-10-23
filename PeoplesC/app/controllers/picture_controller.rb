@@ -14,9 +14,9 @@ class PictureController < ApplicationController
       @picture = Picture.find(params[:id])
     end
     def create
-      file = params[:qqfile].is_a?(ActionDispatch::Http::UploadedFile) ? params[:qqfile] : params[:file]
       @picture = Picture.new
-      @picture.image file
+	  @picture.picture = params[:file]
+	  @picture.picture = File.open()
       if @picture.save
         render 'new'
       else
@@ -36,12 +36,11 @@ class PictureController < ApplicationController
     def update
       @picture = Picture.find(params[:id])    #correct?
 
-      if @post.update(params[:post].permit(:title, :content))
-        redirect_to @post
+      #if @post.update(params[:post].permit(:title, :content))
+        #redirect_to @post
       else
         render 'edit'
       end
     end
     def destroy
     end
-  end

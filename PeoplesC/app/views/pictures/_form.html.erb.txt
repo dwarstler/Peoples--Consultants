@@ -1,0 +1,35 @@
+<%= form_for(@media) do |f| %>
+  <% if @media.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@media.errors.count, "error") %> prohibited this media from being saved:</h2>
+
+      <ul>
+      <% @media.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.text_field :date %>
+  </div>
+    <div class="field">
+        <%= f.file_field :image %>
+    </div>
+    <div class="field">
+        <%= f.label :remote_image_url, "or image URL" %>
+        <%= f.text_field :remote_image_url %>
+  <div class="field">
+    <%= f.label :linkText %><br>
+    <%= f.text_field :linkText %>
+  </div>
+  <div class="field">
+    <%= f.label :photo %><br>
+    <%= f.text_area :photo %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
