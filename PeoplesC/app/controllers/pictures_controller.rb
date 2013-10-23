@@ -1,56 +1,65 @@
 class PicturesController < ApplicationController
-    def new
-    end
-    def index
-      @picture = Picture.all
-    end
-    def show
-      @picture = Picture.find(params[:id])
-    end
-    def new
-      @picture = Picture.new
-	  @picture.image = params[:file]
-	  @picture.save!
-    end
-    def edit
-      @picture = Picture.find(params[:id])
-    end
-    def create
-      @picture = Picture.new(picture_params)
-	  
+  before_action :set_picture, only: [:show, :edit, :update, :destroy]
+
+
+  def index
+    @pictures = Picture.all
+  end
+
+  def show
+  end
+
+  def new
+    @picture = Picture.new
+    @picture.image = params[:file]
+    @picture.save!
+  end
+
+  def edit
+  end
+
+  def create
+    @picture = Picture.new(picture_params)
+
+    respond_to do |format|
       if @picture.save
-        render 'new'
+        format.html { redirect_to @picture, notice: 'Picture was successfully created.' }
+        format.json { render action: 'show', status: :created, location: @picture }
       else
-        render @picture
+        format.html { render action: 'new' }
+        format.json { render json: @picture.errors, status: :unprocessable_entity }
       end
     end
-    #@media.url = File.open('')
-    #current_user.posts << @post_blog
-    #Project.find(1).posts << @post_blog
+  end
 
-
-    #if @post_blog.save
-    #redirect_to @post_blog
-    #else
-    #render 'new'
-    #end
-    def update
-      @picture = Picture.find(params[:id])    #correct?
-
-      #if @post.update(params[:post].permit(:title, :content))
-        #redirect_to @post
+  def update
+    respond_to do |format|
+      if @picture.update(picture_params)
+        format.html { redirect_to @picture, notice: 'Picture was successfully updated.' }
+        format.json { head :no_content }
       else
-        render 'edit'
+        format.html { render action: 'edit' }
+        format.json { render json: @picture.errors, status: :unprocessable_entity }
       end
     end
-    def destroy
+  end
+
+  def destroy
+    @picture.destroy
+    respond_to do |format|
+      format.html { redirect_to pictures_url }
+      format.json { head :no_content }
     end
-	
-	private
-		def set_picture
-			@picture = Picture.find(params[:id])
-		end
-		
-		def picture_params
-			params[:picture]
-		end
+  end
+
+  private
+  # Use callbacks to share common setup or constraints between actions.
+  def set_picture
+    @picture = Picture.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def picture_params
+    params[:picture]
+  end
+end
