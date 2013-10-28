@@ -6,13 +6,13 @@ class Picture < ActiveRecord::Base
   belongs_to :admin
   belongs_to :project
 
-  validates :picture_file, :file_location, :admin_id, presence: true
+  validates :admin_id, presence: true
 
   #ensures that nobody creates a file with a non-empty last_edited_by field
-  validates :last_edited_by, absence: {on: :create}
+  #validates :last_edited_by, absence: {on: :create}
 
   #ensures that the last_edited_by field is updated on update
-  validates :last_edited_by, presence: {on: :update}
+  #validates :last_edited_by, presence: {on: :update}
 
   #ensures the admin and project ids are integers
   validates :project_id, numericality: {only_integer: true}
